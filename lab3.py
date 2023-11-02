@@ -39,9 +39,20 @@ conditional_pmf_Y_given_X_estimated = [[joint_pmf_estimated[x][y]/marginal_pmf_X
 
 # Print the results (rounded to four decimal places)
 print("Joint PMF of X and Y:")
+print("   y:   0       1       2       3       4       5       6       7")
+print("x ------------------------------------------------------------------")
+row_num = 0
 for row in joint_pmf_estimated:
-    print([round(prob, 4) for prob in row])
-
+    print(row_num, " |  ", end = "")
+    i = 0
+    for prob in row:
+        if i == row_num + 1:
+            break;
+        print(f"{round(prob,4):.4f}", end = "  ")
+        i += 1
+    print()
+    row_num += 1
+"""
 print("Conditional PMF of X given Y:")
 for row in conditional_pmf_X_given_Y_estimated:
     print([round(prob, 4) for prob in row])
@@ -49,3 +60,4 @@ for row in conditional_pmf_X_given_Y_estimated:
 print("Conditional PMF of Y given X:")
 for row in conditional_pmf_Y_given_X_estimated:
     print([round(prob, 4) for prob in row])
+"""

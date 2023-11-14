@@ -25,7 +25,7 @@ for i in range(len(p_values)):
         print(f"{round(mean_table[i][j],3):.3f}", end= "   ")
     print()
 print()
-print(mean_table)
+#print(mean_table)
 print("\nvariance")
 print("    q:  0.1     0.2     0.3     0.4     0.5     0.6     0.7     0.8     0.9")
 print(" p   ------------------------------------------------------------------------")
@@ -33,8 +33,15 @@ for i in range(len(p_values)):
     print(f"{round(p_values[i],1):.1f}", "|  ", end = "")
     k = 0
     for j in range(len(q_values)):
-        print(f"{round(variance_table[i][j],3):.3f}", end= "   ")
+        temp = round(variance_table[i][j],3)
+        if j < 8 and variance_table[i][j+1] > 9:
+            print(f"{temp:.3f}", end= "  ")
+        else:
+            if temp > 9:
+                print(f"{temp:.3f}", end= "  ")
+            else:
+                print(f"{temp:.3f}", end= "   ")
     print()
 
 print()
-print(variance_table)
+#print(variance_table)

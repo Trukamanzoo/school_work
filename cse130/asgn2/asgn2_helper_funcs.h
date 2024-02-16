@@ -15,11 +15,11 @@
  *  @brief This structure represents a socket listening for connections
  */
 typedef struct {
-    /** @brief The socket for the listening connection. Note: do not
-    *          use this directly! Take a look at listener_init and
-    *          listener_accept instead!
-    */
-    int fd;
+  /** @brief The socket for the listening connection. Note: do not
+   *          use this directly! Take a look at listener_init and
+   *          listener_accept instead!
+   */
+  int fd;
 } Listener_Socket;
 
 /** @brief Initializes a listener socket that listens on the provided

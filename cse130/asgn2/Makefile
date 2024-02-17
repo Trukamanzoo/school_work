@@ -29,7 +29,7 @@ httpserver.o : httpserver.c
 	$(CC) $(CFLAGS) -c httpserver.c
 
 clean :
-	rm -f httpserver httpserver.o
+	rm -f httpserver new new.o httpserver.o
 	
 format :
 	clang-format -i -style=file *.[ch]
